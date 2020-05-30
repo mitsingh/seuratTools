@@ -64,7 +64,7 @@ convert_seu_to_cds <- function(seu, resolution = 1) {
 
 
   cds_from_seurat <- monocle3::preprocess_cds(cds_from_seurat)
-  cds_from_seurat <- monocle3::reduce_dimension(cds_from_seurat, "UMAP")
+  cds_from_seurat <- monocle3::reduce_dimension(cds_from_seurat, reduction_method = "UMAP")
 
   # reducedDim(cds_from_seurat, "PCA") <- Embeddings(seu, "pca")
   reducedDim(cds_from_seurat, "UMAP") <- Embeddings(seu, "umap")
